@@ -1,55 +1,17 @@
 <html>
     <head>
         <title>Acme Faker Favorites</title>
+        <link rel = "stylesheet" type = "text/css" href = "styles.css" />
         <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
         <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
         <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js"></script>
         <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
-
-
+        <script src="main.js" type="text/babel" defer></script>
     </head>
 
     <body>
         <div id="root"></div>
 
-        <script type="text/babel">
-
-            console.log(faker.helpers.createCard());
-        const maxUsers=10;
-        let users=[];
-        for(let i=0; i<maxUsers; i++){
-            users.push(faker.helpers.createCard())
-        }
-        class ListContainer extends React.Component{
-            constructor(props){
-                super(props);
-
-                this.state= {
-                    userList:users,
-                }
-            }
-
-            buildRows = () => {
-                let children = this.state.userList.map(user => 
-                    <div id="user" key={user.name}>
-                        <p>{user.name}</p>
-                        <p>{user.username}</p>
-                    </div>
-                )
-                return children;
-            } 
-
-            render() {
-                return (
-                    <div id="list-container">
-                       { this.buildRows() }
-                    </div>
-                )
-            }
-        }
-
-        ReactDOM.render(<ListContainer />, document.getElementById('root'));
-
-        </script>
+       
     </body>
 </html>
